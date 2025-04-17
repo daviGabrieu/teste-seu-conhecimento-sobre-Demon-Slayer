@@ -30,7 +30,7 @@ const perguntas = [
     pergunta: "Qual é o nome da técnica de respiração usada por Tanjiro?",
     respostas: [
       "Respiração da Água",
-      "Respiração do Fogo",
+      "Respiração do chamas",
       "Respiração do Sol"
     ],
     correta: 2 // A resposta correta é "Respiração do sol"
