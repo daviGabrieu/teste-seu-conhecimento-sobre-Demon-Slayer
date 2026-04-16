@@ -1,139 +1,158 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+:root {
+  --bg: #050505;
+  --purple: #a855f7;
+  --green: #10b981;
+  --glass: rgba(255, 255, 255, 0.05);
+}
 
-*, :root {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  font-family: 'inter', sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-body{
-  background-color: rgb(0, 0, 0);
+body {
+  background: var(--bg);
+  color: white;
 }
 
-main {
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
   padding: 20px;
-  max-width: 640px;
-  margin: 0 auto 64px;
-}
-
-header {
-  margin-top: 64px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid #ffffff; 
-}
-
-header h1{
-  margin-top: 10px;
-  font-size:30px;
-  color: white;
-}
-
-#quiz{
-  counter-reset: quiz-item;
-}
-
-.quiz-item {
-  margin-top: 24px;
-  border: 1px solid #ffffff;
-  border-radius: 6px;
-
-  overflow: hidden;
-}
-
-.quiz-item h3 {
-  padding: 16px 20px;
-  color: white;
-
-  display: flex;
   align-items: center;
-  gap: 10px;
-
-  background-color: rgba(0, 247, 41, 0.658);
 }
 
-.quiz-item h3::before{
-  counter-increment: quiz-item;
-  content: counter(quiz-item);
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--purple);
+}
 
-  width: 28px;
-  height: 28px;
-
-
+.nav-links {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  gap: 20px;
+  list-style: none;
 }
 
-.quiz-item dl {
-  padding: 20px 24px;
-
-  display: grid;
-  gap: 8px;
-}
-
-.quiz-item dl dt {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0;
-
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
+.nav-links a {
   color: white;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-imput {
-  all: unset;
-  border: 1px solid rgb(255, 255, 255);
-  width: 16px;
-  height: 16px;
-
-   border-radius: 50%;
-
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   flex-shrink: 0;
+.nav-links a:hover {
+  color: var(--purple);
 }
 
-input :checked{
-  border: 1px solid #ffffff;
+.cart {
+  font-size: 1.2rem;
 }
 
-input :checked:before{
-  content: "";
-  width: 10px;
-  height: 10px;
-
-  display: block;
- background-color: rgb(255, 255, 255);
- border-radius: 50%;
-}
-
-
-#acertos {
+/* HERO */
+.hero {
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.918);
- 
-  position: fixed;
-  bottom:0;
-  left: 0;
-
-  width: 100%;
-  padding: 12px;
+  padding: 80px 20px;
 }
 
-img {
-  display: block;
-  margin: auto auto;
-  width: 300px;
+.hero h1 {
+  font-size: 3rem;
+  color: var(--purple);
+}
+
+.hero p {
+  margin: 20px 0;
+}
+
+.btn-primary {
+  background: var(--green);
+  border: none;
+  padding: 12px 24px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--green);
+}
+
+/* PRODUCTS */
+.products {
+  padding: 40px 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  box-shadow: 0 0 15px var(--purple);
+  border: 1px solid var(--purple);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product-card button {
+  margin-top: 10px;
+  background: var(--green);
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.product-card button:hover {
+  box-shadow: 0 0 10px var(--green);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.6;
+}
+
+/* TOAST */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--green);
+  color: black;
+  padding: 12px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
 }
