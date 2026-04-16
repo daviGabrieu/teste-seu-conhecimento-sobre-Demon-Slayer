@@ -1,42 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste seu conhecimento sobre Demon Slayer</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Forge</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main>
-        <header>
-        <img src="https://i.pinimg.com/originals/0d/98/ce/0d98ce657d01311ac1824ead2570046b.gif" alt="">
-          <h1>Teste seus conhecimentos sobre o Demon Slayer</h1>
-        </header>
-     
-         <div id="quiz"></div>
-     
-         <template>
-           <div class="quiz-item">
-             <h3>
-               pergunta 01
-             </h3>
-             <dl>
-               <dt>
-                 <input type="radio" name="item" velue="0">
-                 <span>
-                 Resposta A
-                 </span>
-               </dt>
-             </dl>
-           </div>
-         </template>
-     
-         <div id="acertos">
-           <strong>acertos</strong>
-           <span>0 de 10</span>
-         </div>
-     
-     </main>
-     <script src="./index.js"></script>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">Pixel Forge</div>
+    <ul class="nav-links">
+      <li><a href="#">Produtos</a></li>
+      <li><a href="#">Sobre</a></li>
+    </ul>
+    <div class="cart">
+      🛒 <span id="cart-count">0</span>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Forje seu Setup</h1>
+  <p>Performance, estilo e poder para gamers de verdade.</p>
+  <button class="btn-primary">Explorar Produtos</button>
+</section>
+
+<section class="products">
+  <h2>Produtos</h2>
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Teclado">
+      <h3>Teclado Mecânico RGB</h3>
+      <p>R$ 399,90</p>
+      <button class="add-cart">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Mouse">
+      <h3>Mouse Gamer Pro</h3>
+      <p>R$ 199,90</p>
+      <button class="add-cart">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Headset">
+      <h3>Headset Surround</h3>
+      <p>R$ 299,90</p>
+      <button class="add-cart">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="GPU">
+      <h3>Placa de Vídeo RTX</h3>
+      <p>R$ 3.999,90</p>
+      <button class="add-cart">Adicionar ao Carrinho</button>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Pixel Forge. Todos os direitos reservados.</p>
+</footer>
+
+<div id="toast" class="toast">Produto adicionado à Pixel Forge!</div>
+
+<script src="script.js"></script>
 </body>
 </html>
